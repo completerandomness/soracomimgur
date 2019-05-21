@@ -10,6 +10,16 @@ from base64 import b64encode
 client_id = 'client_id'
 headers = {"Authorization": "Client-ID client_id"}
 api_key = 'api_key'
+
+cam = VideoCapture(0)
+s, img = cam.read()
+if s:
+    namedWindow("cam-test", CV_WINDOW_AUTOSIZE)
+    imshow("cam-test", img)
+    waitKey(0)
+    destroyWindow("cam-test")
+    imwrite("1.jpg", img)
+
 url = "https://api.imgur.com/3/upload.json"
 j1 = requests.post(
     url,
