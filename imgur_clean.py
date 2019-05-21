@@ -6,6 +6,7 @@ import subprocess
 import time
 import signal
 from base64 import b64encode
+from cv2 import *
 
 client_id = 'client_id'
 headers = {"Authorization": "Client-ID client_id"}
